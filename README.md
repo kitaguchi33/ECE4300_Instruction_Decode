@@ -5,7 +5,7 @@
 | File |
 |---|
 | [`[idExLatch].v`]() | 
-| [`[regfile].v`]() | 
+| [`[regfile].v`](https://github.com/kitaguchi33/ECE4300_Instruction_Decode/blob/main/src/regfile.v) | 
 | [`[control].v`]() | 
 | [`[signExtend].v`](https://github.com/kitaguchi33/ECE4300_Instruction_Decode/blob/main/src/signExtend.v) | 
 | [`[final].v`]() | 
