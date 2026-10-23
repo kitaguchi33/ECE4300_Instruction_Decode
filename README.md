@@ -4,18 +4,18 @@
 
 | File |
 |---|
-| [`[idExLatch].v`]() | 
+| [`[idExLatch].v`](https://github.com/kitaguchi33/ECE4300_Instruction_Decode/blob/main/src/idExLatch.v) | 
 | [`[regfile].v`](https://github.com/kitaguchi33/ECE4300_Instruction_Decode/blob/main/src/regfile.v) | 
-| [`[control].v`]() | 
+| [`[control].v`](https://github.com/kitaguchi33/ECE4300_Instruction_Decode/blob/main/src/control.v) | 
 | [`[signExtend].v`](https://github.com/kitaguchi33/ECE4300_Instruction_Decode/blob/main/src/signExtend.v) | 
 | [`[final].v`]() | 
 
 ### Testbench
 | File |
 |---|
-| [`[idExLatch_sim].v`]() | 
+| [`[idExLatch_sim].v`](https://github.com/kitaguchi33/ECE4300_Instruction_Decode/blob/main/testbenches/idExLatch_sim.v) | 
 | [`[regfile_sim].v`]() | 
-| [`[control_sim].v`]() |
+| [`[control_sim].v`](https://github.com/kitaguchi33/ECE4300_Instruction_Decode/blob/main/testbenches/control_sim.v) |
 | [`[signExtend_sim].v`](https://github.com/kitaguchi33/ECE4300_Instruction_Decode/blob/main/testbenches/signExtend_sim.v) | 
 
 ### Timing Diagrams
