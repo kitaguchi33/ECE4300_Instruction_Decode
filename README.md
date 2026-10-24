@@ -14,7 +14,7 @@
 | File |
 |---|
 | [`[idExLatch_sim].v`](https://github.com/kitaguchi33/ECE4300_Instruction_Decode/blob/main/testbenches/idExLatch_sim.v) | 
-| [`[regfile_sim].v`]() | 
+| [`[regfile_sim].v`](https://github.com/kitaguchi33/ECE4300_Instruction_Decode/blob/main/testbenches/regfile_sim.v) | 
 | [`[control_sim].v`](https://github.com/kitaguchi33/ECE4300_Instruction_Decode/blob/main/testbenches/control_sim.v) |
 | [`[signExtend_sim].v`](https://github.com/kitaguchi33/ECE4300_Instruction_Decode/blob/main/testbenches/signExtend_sim.v) | 
 | [`[decode_TB].v`](https://github.com/kitaguchi33/ECE4300_Instruction_Decode/blob/main/testbenches/decode_TB.v) |
