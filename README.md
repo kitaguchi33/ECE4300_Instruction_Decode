@@ -21,4 +21,5 @@
 
 ### Timing Diagrams
 <img width="1037" height="439" alt="Screenshot 2026-10-21 214532" src="https://github.com/user-attachments/assets/aa23668f-f3cb-4bda-bd8f-f8d66f546139" />
+<img width="681" height="436" alt="Screenshot 2026-10-23 174144" src="https://github.com/user-attachments/assets/0c4e7b07-5036-450c-a441-66c0b3c9417d" />
 
