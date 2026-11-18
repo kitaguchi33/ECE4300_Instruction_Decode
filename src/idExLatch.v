@@ -13,11 +13,11 @@ module idExLatch(
     input [31:0] npc, readdat1, readdat2, sign_ext,
     input [4:0] instr_bits_20_16, instr_bits_15_11,
     
-    input clk, clr
+    input clk, rst
 );
 
-    always @(posedge clk or negedge clr) begin
-        if (!clr) begin // All outputs are 0 on clr
+    always @(posedge clk or negedge rst) begin
+        if (!rst) begin // All outputs are 0 on rst
             wb_out                  <= 2'd0;
             mem_out                 <= 3'd0;
             ctl_ex_out              <= 4'd0;
