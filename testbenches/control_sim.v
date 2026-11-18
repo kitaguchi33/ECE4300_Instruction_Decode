@@ -2,24 +2,24 @@
 
 module control_sim(); // Outputs are wires, inputs are reg
 
-    reg clk = 0, clr;
+    reg clk = 0, rst;
     reg [5:0] opcode;
     
     wire [1:0] wb;
     wire [2:0] mem;
     wire [3:0] ex;
 
-    control dut(clk, clr, opcode, wb, mem, ex);
+    control dut(clk, rst, opcode, wb, mem, ex);
     
     initial forever #5 clk = ~clk;
     
     initial begin
-        clr = 0;
+        rst = 0;
         opcode = 6'b100000;
     
         #20
         
-        clr = 1;
+        rst = 1;
     
         #20
     
@@ -43,7 +43,7 @@ module control_sim(); // Outputs are wires, inputs are reg
         
         #20
         
-        clr = 0;
+        rst = 0;
         
         #50
         
