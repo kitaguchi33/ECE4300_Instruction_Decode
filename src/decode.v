@@ -1,13 +1,10 @@
 `timescale 1ns / 1ps
 
 module decode(
-    input wire          clk,
-                        clr,
-                        wb_reg_write,
+    input wire          clk, rst, wb_reg_write,
     input wire [4:0]    wb_write_reg_location,
-    input wire [31:0]   mem_wb_write_data,
-                        if_id_instr,
-                        if_id_npc,
+    input wire [31:0]   mem_wb_write_data, if_id_instr, if_id_npc,
+    
     output wire [1:0]   id_ex_wb,
     output wire [2:0]   id_ex_mem,
     output wire [3:0]   id_ex_execute,
@@ -35,7 +32,7 @@ module decode(
 
     regfile rf0(
         .clk(clk),
-        .clr(clr),
+        .rst(rst),
         .regwrite(wb_reg_write),
         .rs(if_id_instr[25:21]),
         .rt(if_id_instr[20:16]),
@@ -47,7 +44,7 @@ module decode(
 
     control c0(
         .clk(clk),
-        .clr(clr),
+        .rst(rst),
         .opcode(if_id_instr[31:26]),
         .wb(wb_internal),
         .mem(mem_internal),
@@ -56,7 +53,7 @@ module decode(
 
     idExLatch iEL0(
         .clk(clk),                                  //inputs
-        .clr(clr),
+        .rst(rst),
         .ctl_wb(wb_internal),
         .ctl_mem(mem_internal),
         .ctl_ex(ex_internal),
