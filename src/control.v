@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 
 module control(
-    input clk, clr,
+    input clk, rst,
     input [5:0] opcode,
     
     output reg [1:0] wb,
@@ -23,8 +23,8 @@ module control(
         ex <= 4'd0;
     end
     
-    always @ (posedge clk or negedge clr) begin
-        if (!clr) begin         // All outputs are zero on clear
+    always @ (posedge clk or negedge rst) begin
+        if (!rst) begin         // All outputs are zero on clear
             wb <= 2'd0;
             mem <= 3'd0;
             ex <= 4'd0;
