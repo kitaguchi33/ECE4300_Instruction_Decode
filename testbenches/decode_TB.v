@@ -2,7 +2,7 @@
 
 module decode_TB();
 
-    reg clk_tb, clr_tb, regwrite_tb;
+    reg clk_tb, rst_tb, regwrite_tb;
     reg [4:0] wb_write_reg_location_tb;
     reg [31:0] npc_tb, instr_from_ifId_tb, mem_wb_write_data_tb; 
     
@@ -14,7 +14,7 @@ module decode_TB();
     
     decode dut(
         .clk(clk_tb),
-        .clr(clr_tb),
+        .rst(rst_tb),
         .wb_reg_write(regwrite_tb),
         .wb_write_reg_location(wb_write_reg_location_tb),
         .mem_wb_write_data(mem_wb_write_data_tb),
@@ -36,7 +36,7 @@ module decode_TB();
     always #5 clk_tb = ~clk_tb;
 
     initial begin
-        clr_tb = 0;
+        rst_tb = 0;
         regwrite_tb = 0;
         wb_write_reg_location_tb = 5'd2; // $v0
         mem_wb_write_data_tb = 32'h64;
@@ -45,11 +45,11 @@ module decode_TB();
         // Add $v0 (reg[2]), $a2 (reg[6]), $a3 (reg[7])
         instr_from_ifId_tb = 32'h00c71020; // 00000000110001110001000000100000
         
-        #50; // clr enabled, initializing values
+        #50; // rst enabled, initializing values
         
-        clr_tb = 1;
+        rst_tb = 1;
         
-        #50 // clr disabled, regwrite disabled, decode RFORMAT
+        #50 // rst disabled, regwrite disabled, decode RFORMAT
         
         npc_tb = 32'h00000002;
         
