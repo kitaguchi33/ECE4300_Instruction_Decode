@@ -8,7 +8,7 @@ module ifExLatch_sim();
     reg [31:0] npc, readdat1, readdat2, sign_ext;
     reg [4:0] instr_bits_20_16, instr_bits_15_11;
     
-    reg clk = 0, clr;
+    reg clk = 0, rst;
     
     wire [1:0] wb_out;
     wire [2:0] mem_out;
@@ -29,14 +29,14 @@ module ifExLatch_sim();
     npc, readdat1, readdat2, sign_ext,
     instr_bits_20_16, instr_bits_15_11,
     
-    clk, clr
+    clk, rst
     );
     
     initial forever #5 clk = ~clk;
 
     initial begin
     
-        clr = 0;
+        rst = 0;
         ctl_wb = 2'b01;
         ctl_mem = 3'b100;
         ctl_ex = 4'b1111;
@@ -49,7 +49,7 @@ module ifExLatch_sim();
       
         #20;
 
-        clr = 1;
+        rst = 1;
         ctl_wb = 2'b01;
         ctl_mem = 3'b100;
         ctl_ex = 4'b1111;
@@ -86,7 +86,7 @@ module ifExLatch_sim();
 
         #20;
 
-        clr = 0;
+        rst = 0;
 
         #50;
 
