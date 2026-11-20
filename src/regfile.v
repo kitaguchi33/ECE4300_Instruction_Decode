@@ -26,8 +26,8 @@ initial begin
         REG[9] = 32'h12012345;
     end
 
-    always @(posedge clk) begin
-        if (rst) begin
+    always @(posedge clk or negedge rst) begin
+        if (!rst) begin
             A_readdat1 <= 32'b0;
             B_readdat2 <= 32'b0;
         end
